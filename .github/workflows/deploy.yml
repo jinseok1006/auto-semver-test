@@ -19,8 +19,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: anothrNick/github-tag-action@1.71.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BUMP: patch       # 기본은 patch 증가 (커밋 메시지 없으면)
-          WITH_V: true              # 태그에 v 접두어 붙이기 (v1.2.3)
-          RELEASE_BRANCHES: main    # main 브랜치만 릴리즈로 처리
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
+          WITH_V: true
+          RELEASE_BRANCHES: main
