@@ -18,9 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: mathieudutour/github-tag-action@v6.1
+      - uses: anothrNick/github-tag-action@v1.71.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          tag_prefix: "v"
-          release_branches: "main"
-          default_bump: "patch"
+          DEFAULT_BUMP: patch       # 기본은 patch 증가 (커밋 메시지 없으면)
+          WITH_V: true              # 태그에 v 접두어 붙이기 (v1.2.3)
+          RELEASE_BRANCHES: main    # main 브랜치만 릴리즈로 처리
