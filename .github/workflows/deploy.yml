@@ -12,8 +12,8 @@ jobs:
       contents: write
 
     env:
-      HARBOR_REGISTRY: ${{ secrets.HARBOR_REGISTRY }}
-      HARBOR_PROJECT: ${{ secrets.HARBOR_PROJECT }}
+      HARBOR_REGISTRY: harbor.jbnu.ac.kr
+      HARBOR_PROJECT: jinseok1006
       IMAGE_NAME: semver-test
 
     steps:
