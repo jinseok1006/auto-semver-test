@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - dev
 
 jobs:
   bump-build-push:
@@ -20,10 +21,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - id: tag_version
-        uses: anothrNick/github-tag-action@v1
+        uses: anothrNick/github-tag-action@1.71.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
+          PRERELEASE: true
+          PRE_RELEASE_BRANCHES: dev
 
       - name: Set version to environment
         run: echo "VERSION=${{ steps.tag_version.outputs.new_tag }}" >> $GITHUB_ENV
