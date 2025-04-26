@@ -28,6 +28,10 @@ jobs:
 
       - name: Set version to environment
         run: echo "VERSION=${{ steps.tag_version.outputs.new_tag }}" >> $GITHUB_ENV
+      
+      - name: Test connection to Harbor
+        run: |
+          curl -v https://harbor.jbnu.ac.kr
 
       - uses: docker/login-action@v3
         with:
