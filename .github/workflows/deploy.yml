@@ -25,6 +25,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
+          PRERELEASE: true
           PRE_RELEASE_BRANCHES: dev
 
       - name: Set version to environment
