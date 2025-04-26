@@ -3,7 +3,7 @@ name: Auto Bump Version, Build and Push Docker Image to Harbor
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   bump-build-push:
