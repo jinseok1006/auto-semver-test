@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: anothrNick/github-tag-action@v1.71.0
+      - uses: anothrNick/github-tag-action@1.71.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch       # 기본은 patch 증가 (커밋 메시지 없으면)
