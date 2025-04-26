@@ -1,0 +1,20 @@
+# .github/workflows/auto-tag.yml
+name: Auto Tag on Push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: mathieudutour/github-tag-action@v6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: "v"
+          release_branches: "main"
+          default_bump: "patch"
